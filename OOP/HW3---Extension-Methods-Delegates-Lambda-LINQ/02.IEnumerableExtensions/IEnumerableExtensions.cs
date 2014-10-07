@@ -1,11 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace _02.IEnumerableExtensions
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
 
     //delegate for the method which will be passed to retrieve the required numeral value
     //for executing the methods Sum, Average, Product for user defined types
@@ -21,6 +20,7 @@ namespace _02.IEnumerableExtensions
                 throw new ArgumentNullException("empty collection");
             }
             decimal sum = 0;
+            
             foreach (T element in collection)
             {
                 sum = sum + (dynamic)element;
@@ -36,12 +36,14 @@ namespace _02.IEnumerableExtensions
                 throw new ArgumentNullException("empty collection");
             }
             decimal sum = 0;
+            
             foreach (T element in collection)
             {
                 sum = sum + numericalVal(element);
             }
             return sum;
         }
+        
         public static decimal Product<T>(this IEnumerable<T> collection) where T : struct, IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
         {
             if (collection == null)
@@ -49,6 +51,7 @@ namespace _02.IEnumerableExtensions
                 throw new ArgumentNullException("empty collection");
             }
             decimal sum = 1;
+        
             foreach (T element in collection)
             {
                 sum = sum * (dynamic)element;
@@ -63,12 +66,14 @@ namespace _02.IEnumerableExtensions
                 throw new ArgumentNullException("empty collection");
             }
             decimal sum = 1;
+        
             foreach (T element in collection)
             {
                 sum = sum * numericalVal(element);
             }
             return sum;
         }
+        
         public static decimal Average<T>(this IEnumerable<T> collection) where T : struct, IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
         {
             if (collection == null)
@@ -77,11 +82,13 @@ namespace _02.IEnumerableExtensions
             }
             decimal sum = 0;
             long count = 0;
+        
             foreach (T element in collection)
             {
                 sum = sum + (dynamic)element;
                 count++;
             }
+        
             if (count == 0)
             {
                 throw new ArgumentOutOfRangeException("Collection contains no elements");
@@ -100,11 +107,13 @@ namespace _02.IEnumerableExtensions
             }
             decimal sum = 0;
             long count = 0;
+        
             foreach (T element in collection)
             {
                 sum = sum + numericalVal(element);
                 count++;
             }
+        
             if (count == 0)
             {
                 throw new ArgumentOutOfRangeException("Collection contains no elements");
@@ -114,6 +123,7 @@ namespace _02.IEnumerableExtensions
                 return sum / count;
             }
         }
+        
         public static T Min<T>(this IEnumerable<T> collection) where T : IComparable
         {
             if (collection == null)
@@ -122,6 +132,7 @@ namespace _02.IEnumerableExtensions
             }
             return collection.OrderByDescending(x => x).First();
         }
+        
         public static T Max<T>(this IEnumerable<T> collection) where T : IComparable
         {
             if (collection == null)
@@ -130,7 +141,5 @@ namespace _02.IEnumerableExtensions
             }
             return collection.OrderBy(x => x).First();
         }
-
- 
     }
 }
