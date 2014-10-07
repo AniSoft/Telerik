@@ -48,6 +48,7 @@ namespace _3DPoint
                 {
                     double x, y, z;
                     string[] coordinates = item.Split(',');
+                    
                     if (coordinates.Length == 3 && double.TryParse(coordinates[0], out x)
                         && double.TryParse(coordinates[1], out y) && double.TryParse(coordinates[2], out z))
                     {
