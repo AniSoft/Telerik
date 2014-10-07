@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace _3DPoint
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    
     public class Path
     {
         private readonly List<Point3D> pathlist = new List<Point3D>();
@@ -31,6 +31,7 @@ namespace _3DPoint
                 pathlist.Add(point);
             }
         }
+
         public void Clear()
         {
             pathlist.Clear();
@@ -39,12 +40,14 @@ namespace _3DPoint
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
+
             foreach (var item in pathlist)
             {
                 sb.Append(item.ToString());
                 sb.Append(" | ");
             }
             sb.Remove(sb.Length - 3, 3);
+
             return sb.ToString();
         }
     }
