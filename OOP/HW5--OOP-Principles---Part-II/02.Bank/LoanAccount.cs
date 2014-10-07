@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace _02.Bank
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public class LoanAccount : Account
     {
         // Constructor
@@ -20,10 +20,12 @@ namespace _02.Bank
             {
                 return (numberOfMonths - 3) * MonthInterestRate;
             }
+
             if (this.customer is Company && numberOfMonths > 2)
             {
                 return (numberOfMonths - 2) * MonthInterestRate;
             }
+
             return 0;
         }
     }
