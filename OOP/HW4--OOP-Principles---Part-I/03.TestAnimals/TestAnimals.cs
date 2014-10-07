@@ -1,12 +1,12 @@
-using _03.Animals;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace _03.TestAnimals
 {
+    using _03.Animals;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    
     class TestAnimals
     {
         static void Main()
@@ -19,6 +19,7 @@ namespace _03.TestAnimals
                 new Frog("Jabchocho",1,Sex.male),
                 new Frog("Jabkaka",3,Sex.female)
             };
+            
             Dog[] dogs = new Dog[6]
             {
                 new Dog("Balkan",4,Sex.male),
@@ -28,6 +29,7 @@ namespace _03.TestAnimals
                 new Dog("Puffi",3,Sex.female),
                 new Dog("Gudjo",5,Sex.male)
             };
+            
             Cat[] cats = new Cat[8]
             {
                 new Cat("Mats",1,Sex.male),
@@ -42,7 +44,6 @@ namespace _03.TestAnimals
             PrintToConsole(frogs);
             PrintToConsole(dogs);
             PrintToConsole(cats);
-            
         }
 
         private static void PrintToConsole(Animal[] animals)
@@ -51,6 +52,7 @@ namespace _03.TestAnimals
             {
                 Console.WriteLine(item);
             }
+            
             Console.WriteLine("Average age of {0} are {1}", animals.GetType().Name.Substring(0, animals.GetType().Name.Length - 2) + "s", Math.Round(animals.Average(x => x.Age)), 2);
             Console.WriteLine();
         }
