@@ -1,17 +1,19 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace _02.Bank
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public class Company : Customer
     {
         private int companyID;
+
         public int CompanyID
         {
             get { return companyID; }
+
             set
             {
                 if (value.ToString().Length != 8)
