@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Defining_Classes___Part_I
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    
     public class Call
     {
         //Properties
@@ -20,6 +20,7 @@ namespace Defining_Classes___Part_I
             this.DialedPhoneNumber = dialedPhoneNumber;
             this.Duration = duration;
         }
+        
         public override string ToString()
         {
             string result = String.Format("Call: {0} | {1} | {2} | {3} sec", this.Date.ToString("dd.MM.yy"), this.Date.ToString("HH:mm:ss"), this.DialedPhoneNumber, this.Duration);
