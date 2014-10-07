@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace _02.Bank
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public abstract class Customer
     {
         private string name;
@@ -17,6 +17,7 @@ namespace _02.Bank
             {
                 return name;
             }
+
             private set
             {
                 if (String.IsNullOrWhiteSpace(value))
@@ -26,12 +27,14 @@ namespace _02.Bank
                 name = value;
             }
         }
+
         public string Address
         {
             get
             {
                 return address;
             }
+
             private set
             {
                 if (String.IsNullOrWhiteSpace(value))
