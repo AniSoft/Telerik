@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace _03_05.LinqAndLambdaOverStudentClass
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    
     class Program
     {
         static void Main(string[] args)
@@ -81,6 +81,7 @@ namespace _03_05.LinqAndLambdaOverStudentClass
                 from st in students
                 where st.FirstName.CompareTo(st.LastName) < 0
                 select st;
+
             foreach (var st in queryStudents)
             {
                 newstudents.Add(st);
