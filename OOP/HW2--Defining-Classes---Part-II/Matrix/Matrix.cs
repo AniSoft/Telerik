@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Matrix
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public class Matrix<T> where T : struct, IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
         // Fields
@@ -13,7 +13,6 @@ namespace Matrix
         private int column;
         private T[,] matrixArray;
         
-
         // Properties
         public int Row
         {
@@ -21,6 +20,7 @@ namespace Matrix
             {
                 return this.row;
             }
+        
             set
             {
                 if (value < 1)
@@ -33,12 +33,14 @@ namespace Matrix
                 }
             }
         }
+        
         public int Column
         {
             get
             {
                 return this.column;
             }
+        
             set
             {
                 if (value < 1)
@@ -51,6 +53,7 @@ namespace Matrix
                 }
             }
         }
+        
         // indexer
         public T this[int row, int column]
         {
@@ -66,6 +69,7 @@ namespace Matrix
                     throw new IndexOutOfRangeException("Matrix indexes must be positive");
                 }
             }
+        
             set
             {
                 if ((row > -1) && (column > -1) && ((row < this.Row) && (column < this.Column)))
@@ -87,6 +91,7 @@ namespace Matrix
             this.Column = matrix.GetLength(1);
             this.matrixArray = (T[,])matrix.Clone();            
         }
+        
         public Matrix(int row, int column)
         {
             this.Row = row;
@@ -114,6 +119,7 @@ namespace Matrix
                 return result;
             }
         }
+        
         public static Matrix<T> operator -(Matrix<T> m1, Matrix<T> m2)
         {
             if (m1.row != m2.row && m1.column != m2.column)
@@ -130,9 +136,11 @@ namespace Matrix
                         result[i, j] = (dynamic)m1[i, j] - m2[i, j];
                     }
                 }
+        
                 return result;
             }
         }
+        
         public static Matrix<T> operator *(Matrix<T> m1, Matrix<T> m2)
         {
             if (m1.row != m2.column)
@@ -156,6 +164,7 @@ namespace Matrix
                 return result;
             }
         }
+        
         public static bool operator true(Matrix<T> m)
         {
             for (int i = 0; i < m.Row; i++)
@@ -170,6 +179,7 @@ namespace Matrix
             }
             return false;
         }
+        
         public static bool operator false(Matrix<T> m)
         {
             for (int i = 0; i < m.Row; i++)
@@ -184,6 +194,7 @@ namespace Matrix
             }
             return true;
         }
+        
         public static bool operator !(Matrix<T> m)
         {
             if (m)
@@ -205,6 +216,7 @@ namespace Matrix
                 sb.Append("------");
             }
             sb.Append("\n");
+        
             for (int i = 0; i < this.row; i++)
             {
                 for (int j = 0; j < this.column; j++)
@@ -217,6 +229,7 @@ namespace Matrix
                     sb.Append("|".PadRight(3));
                 }
                 sb.Append("\n");
+        
                 for (int j = 0; j < this.row; j++)
                 {
                     sb.Append("------");
