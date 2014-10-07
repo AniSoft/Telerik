@@ -1,17 +1,19 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace _02.Bank
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public class Person : Customer
     {
         private long personalID;
+
         public long PersonalID
         {
             get { return personalID; }
+
             set
             {
                 if (value.ToString().Length != 10)
