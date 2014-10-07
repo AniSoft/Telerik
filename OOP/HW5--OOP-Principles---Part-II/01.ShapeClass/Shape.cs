@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace _01.ShapeClass
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public abstract class Shape
     {
         protected double width;
@@ -17,6 +17,7 @@ namespace _01.ShapeClass
             {
                 return width;
             }
+
             private set
             {
                 if (value <= 0)
@@ -33,6 +34,7 @@ namespace _01.ShapeClass
             {
                 return height;
             }
+
             private set
             {
                 if (value <= 0)
