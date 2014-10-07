@@ -1,13 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
-
-
 namespace _3DPoint
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.IO;
+
     public static class PathStorage
     {
         private static List<Path> pathList;
@@ -21,6 +20,7 @@ namespace _3DPoint
         {
             StreamWriter sw = new StreamWriter(filepath);
             StringBuilder sb = new StringBuilder();
+
             foreach (var path in pathList)
             {
                 foreach (var item in path.Pathlist)
@@ -43,6 +43,7 @@ namespace _3DPoint
             {
                 Path path = new Path();
                 string[] paths = row.Split(new char[]{'|'}, StringSplitOptions.RemoveEmptyEntries);
+
                 foreach (var item in paths)
                 {
                     double x, y, z;
@@ -61,6 +62,7 @@ namespace _3DPoint
 
                 row = sr.ReadLine();
             }
+
             return pathList;
         }
     }
