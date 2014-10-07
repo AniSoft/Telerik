@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace _01.StringBuilderExtantion
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public static class StringBuilderExtension
     {
         public static StringBuilder Substring(this StringBuilder sb, int index, int length)
@@ -29,6 +29,7 @@ namespace _01.StringBuilderExtantion
             else
             {
                 StringBuilder result = new StringBuilder();
+
                 for (int i = index; i < length + index; i++)
                 {
                     result.Append(sb[i]);
@@ -36,10 +37,10 @@ namespace _01.StringBuilderExtantion
                 return result;
             }
         }
+
         public static StringBuilder Substring(this StringBuilder sb, int index)
         {
             return sb.Substring(index, sb.Length - index);
         }
     }
-
 }
