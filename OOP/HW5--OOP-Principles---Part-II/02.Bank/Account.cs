@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace _02.Bank
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public abstract class Account : ICalculetable
     {
         private double balance;
@@ -15,6 +15,7 @@ namespace _02.Bank
         public double Balance
         {
             get { return balance; }
+
             set
             {
                 if (value < 0)
@@ -27,9 +28,11 @@ namespace _02.Bank
                 }
             }
         }
+
         public double MonthInterestRate
         {
             get { return monthInterestRate; }
+
             set
             {
                 if (value < 0)
