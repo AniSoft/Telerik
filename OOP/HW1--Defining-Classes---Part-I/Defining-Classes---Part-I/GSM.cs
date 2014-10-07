@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Defining_Classes___Part_I
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public class GSM
     {
         //fields
@@ -16,6 +16,7 @@ namespace Defining_Classes___Part_I
         private Battery battery = new Battery();
         private Display display = new Display();
         // define static field for iPhone4S
+
         private static GSM iPhone4S = new GSM("IPhone4S", "IPhone")
         {
             Price = 550,
@@ -23,12 +24,14 @@ namespace Defining_Classes___Part_I
             GsmBattery = new Battery("model6", 18, 6, BatteryType.NiMH),
             GsmDisplay = new Display(7, 1024)
         };
+
         private List<Call> callHistory;
 
         //Properties
         public string Model
         {
             get { return this.model; }
+
             set
             {
                 if (!String.IsNullOrEmpty(value))
@@ -41,9 +44,11 @@ namespace Defining_Classes___Part_I
                 }
             }
         }
+
         public string Manufacturer
         {
             get { return this.manufacturer; }
+
             set
             {
                 if (!String.IsNullOrEmpty(value))
@@ -56,9 +61,11 @@ namespace Defining_Classes___Part_I
                 }
             }
         }
+
         public double Price
         {
             get { return this.price; }
+
             set
             {
                 if (value >= 0)
@@ -71,9 +78,11 @@ namespace Defining_Classes___Part_I
                 }
             }
         }
+
         public string Owner
         {
             get { return this.owner; }
+
             set
             {
                 if (value != String.Empty)
@@ -86,14 +95,18 @@ namespace Defining_Classes___Part_I
                 }
             }
         }
+
         public Battery GsmBattery
         {
             get { return this.battery; }
+
             set { this.battery = value; }
         }
+
         public Display GsmDisplay
         {
             get { return this.display; }
+
             set { this.display = value; }
         }
 
@@ -106,6 +119,7 @@ namespace Defining_Classes___Part_I
         public List<Call> CallHistory
         {
             get { return callHistory; }
+
             set { callHistory = value; }
         }
 
@@ -115,6 +129,7 @@ namespace Defining_Classes___Part_I
             this.Model = model;
             this.Manufacturer = manufacturer;
         }
+
         public GSM(string model, string manufacturer, int price, string owner, Battery battery, Display display)
         {
             this.Model = model;
@@ -153,6 +168,7 @@ namespace Defining_Classes___Part_I
                 callHistory.Add(call);
             }
         }
+
         public void RemovingCalls(int index)
         {
             if (index < callHistory.Count)
@@ -160,13 +176,16 @@ namespace Defining_Classes___Part_I
                 this.callHistory.RemoveAt(index);
             }
         }
+
         public void ClearCalls()
         {
             this.callHistory.Clear();
         }
+
         public double CalcTotalPrice(double pricePerMinute)
         {
             double result = 0;
+
             foreach (var item in callHistory)
             {
                 result += (item.Duration / 60)* pricePerMinute;
@@ -188,6 +207,7 @@ namespace Defining_Classes___Part_I
             {
                 result += "\nprise : " + this.Price;
             }
+
             if (this.Owner == null)
             {
                 result += "\nowner : [missing info]";
@@ -196,6 +216,7 @@ namespace Defining_Classes___Part_I
             {
                 result += "\nowner : " + this.Owner;
             }
+
             if (this.battery.Model == null)
             {
                 result += "\nBattery - model : [missing info]";
@@ -204,6 +225,7 @@ namespace Defining_Classes___Part_I
             {
                 result += "\nBattery - model : " + this.battery.Model;
             }
+
             if (this.battery.HoursIdle == 0)
             {
                 result += "; hoursIdle : [missing info]";
@@ -212,6 +234,7 @@ namespace Defining_Classes___Part_I
             {
                 result += "; hoursIdle : " + this.battery.HoursIdle;
             }
+
             if (this.battery.HoursTalk == 0)
             {
                 result += "; hoursTalk : [missing info]";
@@ -220,6 +243,7 @@ namespace Defining_Classes___Part_I
             {
                 result += "; hoursTalk : " + this.battery.HoursTalk;
             }
+
             if (this.battery.Type == 0)
             {
                 result += "; type : [missing info]";
@@ -228,6 +252,7 @@ namespace Defining_Classes___Part_I
             {
                 result += "; type : " + this.battery.Type;
             }
+
             if (this.display.Size == 0)
             {
                 result += "\nDisplay - size : [missing info]";
@@ -236,6 +261,7 @@ namespace Defining_Classes___Part_I
             {
                 result += "\nDisplay - size : " + this.display.Size;
             }
+
             if (this.display.NumberofColors == 0)
             {
                 result += "; numberofColors : [missing info]";
