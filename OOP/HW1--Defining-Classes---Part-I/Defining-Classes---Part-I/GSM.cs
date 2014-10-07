@@ -15,8 +15,8 @@ namespace Defining_Classes___Part_I
         private string owner;
         private Battery battery = new Battery();
         private Display display = new Display();
+        
         // define static field for iPhone4S
-
         private static GSM iPhone4S = new GSM("IPhone4S", "IPhone")
         {
             Price = 550,
