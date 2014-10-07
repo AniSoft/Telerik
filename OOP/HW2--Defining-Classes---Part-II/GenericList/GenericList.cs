@@ -146,18 +146,19 @@ namespace GenericList
         {
             	arr = new T[InitioaCapacity];
 		count = 0;
-        }			
-		public int IndexOf(T item)
+        }
+        
+	public int IndexOf(T item)
+	{
+		for (int i = 0; i < arr.Length; i++)
 		{
-			for (int i = 0; i < arr.Length; i++)
+			if (item.Equals(arr[i]))
 			{
-				if (item.Equals(arr[i]))
-				{
-					  return i;
-				}
+				return i;
 			}
-			return -1;
 		}
+		return -1;
+	}
 		
         public T Min()
         {
@@ -190,13 +191,15 @@ namespace GenericList
 	public override string ToString()
         {
 		StringBuilder sb = new StringBuilder();
+	        
 	        for (int i = 0; i < count; i++)
-	            {
-	                sb.Append(String.Format("{0}, ", arr[i].ToString()));
-	            }
-			sb.Remove(sb.Length - 2, 2);
-			return sb.ToString();
-		}
+	        {
+	        	sb.Append(String.Format("{0}, ", arr[i].ToString()));
+	        }
+		
+		sb.Remove(sb.Length - 2, 2);
+		return sb.ToString();
+	}
 
     }
 }
