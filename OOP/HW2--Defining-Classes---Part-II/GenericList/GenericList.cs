@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace GenericList
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Text;
+	using System.Threading.Tasks;
+
     public class GenericList<T> where T: IComparable
     {
         // Fields
@@ -28,6 +28,7 @@ namespace GenericList
                     throw new IndexOutOfRangeException(String.Format("Index {0} is invalid!", index));
                 }
             }
+
             set
             {
                 if (index < 0)
@@ -52,6 +53,7 @@ namespace GenericList
             {
                 return this.arr.Length;
             }
+
             set
             {
                 if (value < 0)
@@ -73,6 +75,7 @@ namespace GenericList
                 }
             }
         }
+
         public int Count
         {
             get
@@ -86,6 +89,7 @@ namespace GenericList
         {
             this.arr = new T[InitioaCapacity]; 
         }
+
         public GenericList(int capacity)
         {
             this.arr = new T[capacity];
@@ -96,7 +100,8 @@ namespace GenericList
         {
             this.InsertItem(count, item);
         }
-		public void InsertItem(int index, T item)
+	
+	public void InsertItem(int index, T item)
         {
             if (index > count || index < 0)
             {
@@ -108,6 +113,7 @@ namespace GenericList
                 {
                     Capacity = 2 * Capacity;
                 }
+         
                 T[] bufferarray = new T[Capacity];
                 Array.Copy(arr, bufferarray, index);
                 Array.Copy(arr, index, bufferarray, index + 1, count - index);
@@ -119,27 +125,27 @@ namespace GenericList
 		public T RemoveItem(int index)
 		{
 			if (index > count || index < 0)
-		    {
+		    	{
 				throw new IndexOutOfRangeException("Invalid index: " + index);
-		    }
-		    else
-		    {
+		    	}
+			else
+			{
 				T item = arr[index];
 				T[] bufferarray = new T[Capacity];
-                Array.Copy(arr, bufferarray, index);
+	                	Array.Copy(arr, bufferarray, index);
 				Array.Copy(arr, index+1, bufferarray, index, count - index + 1);
 				//arr[count - 1] = null;
 				this.arr = bufferarray;
 				this.count--;
 
-                return item;
+                	return item;
      		}
 			
 		}
-		public void Clear()
+	public void Clear()
         {
-            arr = new T[InitioaCapacity];
-			count = 0;
+            	arr = new T[InitioaCapacity];
+		count = 0;
         }			
 		public int IndexOf(T item)
 		{
@@ -152,6 +158,7 @@ namespace GenericList
 			}
 			return -1;
 		}
+		
         public T Min()
         {
             if (count == 0)
@@ -165,6 +172,7 @@ namespace GenericList
                 return bufferarray.OrderBy(x => x).First();
             }
         }
+        
         public T Max()
         {
             if (count == 0)
@@ -178,13 +186,14 @@ namespace GenericList
                 return arr.OrderByDescending(x => x).First();
             }
         }
-		public override string ToString()
+        
+	public override string ToString()
         {
-			StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < count; i++)
-            {
-                sb.Append(String.Format("{0}, ", arr[i].ToString()));
-            }
+		StringBuilder sb = new StringBuilder();
+	        for (int i = 0; i < count; i++)
+	            {
+	                sb.Append(String.Format("{0}, ", arr[i].ToString()));
+	            }
 			sb.Remove(sb.Length - 2, 2);
 			return sb.ToString();
 		}
