@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace _3DPoint
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public struct Point3D
     {
         // Fields
@@ -29,18 +29,22 @@ namespace _3DPoint
             {
                 return this.x;
             }
+
             set { this.x = value; }
         }
+
         public double Y
         {
             get { return this.y; }
             set { this.y = value; }
         }
+
         public double Z
         {
             get { return this.z; }
             set { this.z = value; }
         }
+
         public Point3D ZeroPoint
         {
             get { return zeroPoint; }
@@ -54,7 +58,6 @@ namespace _3DPoint
             this.Y = y;
             this.Z = z;
         }
-
 
         // Methods
         public override string ToString()
