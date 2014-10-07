@@ -1,12 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-
 namespace _07.TimerUsingDelegate
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading;
+    using System.Threading.Tasks;
+    
     class TestTimer
     {
         static void Main(string[] args)
@@ -21,6 +21,7 @@ namespace _07.TimerUsingDelegate
             }
             t.StopTimer();
             Console.WriteLine("no timer");
+
             for (int i = 0; i < 20; i++)
             {
                 Console.WriteLine("number:" + i);
