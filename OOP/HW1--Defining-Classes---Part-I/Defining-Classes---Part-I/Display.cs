@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Defining_Classes___Part_I
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public class Display
     {
         // Fields
@@ -16,6 +16,7 @@ namespace Defining_Classes___Part_I
         public double Size
         {
             get { return this.size; }
+
             set
             {
                 if (value >= 0)
@@ -28,9 +29,11 @@ namespace Defining_Classes___Part_I
                 }
             }
         }
+
         public int NumberofColors
         {
             get { return this.numberofColors; }
+
             set
             {
                 if (value >= 0)
@@ -49,6 +52,7 @@ namespace Defining_Classes___Part_I
             : this(0, 0)   // Reuse the down constructor
         {
         }
+
         public Display(int size, int numberofColors)
         {
             this.Size = size;
