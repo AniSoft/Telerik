@@ -1,13 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using _03.InvalidRangeException;
-using System.Globalization;
-
 namespace _03.TestInvalidRangeException
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using _03.InvalidRangeException;
+    using System.Globalization;
+
     public class TestInvalidRangeException
     {
         static void Main()
@@ -36,10 +36,12 @@ namespace _03.TestInvalidRangeException
         static int ReadInteger(int start, int end)
         {
             int number;
+
             do
             {
                 Console.WriteLine("Insert number at interval [{0} ... {1}]", start, end);            
             } while(!int.TryParse(Console.ReadLine(),out number));
+
             if (number < start || number > end)
             {
                 throw new InvalidRangeException<int>(start, end, String.Format("Number is out of range[{0} ... {1}]", start, end)); 
@@ -49,13 +51,16 @@ namespace _03.TestInvalidRangeException
                 return number;
             }
         }
+
         static DateTime ReadInteger(DateTime start, DateTime end)
         {
             DateTime date;
+
             do
             {
                 Console.WriteLine("Insert date (day/month/year)at interval [{0} ... {1}]", start.ToString("dd.MM.yyyy"), end.ToString("dd.MM.yyyy"));
             } while (!DateTime.TryParseExact(Console.ReadLine(), new string[] { "d/M/yyyy", "dd/MM/yyyy", "d/M/yy", "dd/MM/yy", "d.M.yyyy", "dd.MM.yyyy", "d.M.yy", "dd.MM.yy", }, CultureInfo.InvariantCulture, DateTimeStyles.None, out date));
+
             if (date < start || date > end)
             {
                 throw new InvalidRangeException<DateTime>(start, end, String.Format("Number is out of range[{0} ... {1}]", start, end));
