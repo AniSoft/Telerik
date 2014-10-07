@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace _3DPoint
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class DistanceIn3D
     {
         private Point3D firstPoint;
@@ -16,6 +16,7 @@ namespace _3DPoint
             get { return firstPoint; }
             set { firstPoint = value; }
         }
+
         public Point3D SecondPoint
         {
             get { return secondPoint; }
