@@ -1,21 +1,24 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace _03_05.LinqAndLambdaOverStudentClass
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public class Student
     {
         private int age;
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
         public int Age
         {
             get { return age; }
-            set { 
+
+            set 
+            { 
                 if(value < 1 || value > 200)
                 {
                     throw new ArgumentOutOfRangeException("age must be between (1 - 200)");
