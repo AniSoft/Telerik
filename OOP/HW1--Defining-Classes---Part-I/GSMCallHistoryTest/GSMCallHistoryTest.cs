@@ -1,12 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Defining_Classes___Part_I;
-
 namespace GSMCallHistoryTest
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using Defining_Classes___Part_I;
+
     class GSMCallHistoryTest
     {
         static void Main(string[] args)
@@ -44,10 +44,12 @@ namespace GSMCallHistoryTest
             gsm.ClearCalls();
             
         }
+
         private static int findLongestCall(List<Call> calls)
         {
             int index = 0;
             int duration = -1;
+
             for (var i = 0; i < calls.Count; i++)
             {
                 if (calls[i].Duration > duration)
@@ -56,6 +58,7 @@ namespace GSMCallHistoryTest
                     index = i;
                 }
             }
+
             return index;
         }
     }
