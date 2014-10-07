@@ -1,18 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-
 namespace _07.TimerUsingDelegate
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Linq;
+    using System.Text;
+    using System.Threading;
+    using System.Threading.Tasks;
     
     public class TimerClass
     {
         // The event that will be raised when time elapses
-        
         public event TimeElapsedEventHandler TimeElapsed;
         private int interval = 0;
         private bool stopper = true;
@@ -23,6 +21,7 @@ namespace _07.TimerUsingDelegate
             {
                 return interval;
             }
+            
             set
             {
                 interval = value;
@@ -42,10 +41,12 @@ namespace _07.TimerUsingDelegate
         {
             this.interval = interval;
         }
+        
         public void StartTimer()
         {
             int counter = 0;
             stopper = false;
+        
             while (stopper == false)
             {
                 Thread.Sleep(this.interval);
@@ -55,9 +56,8 @@ namespace _07.TimerUsingDelegate
                     counter++;
                 }
             }
-
-
         }
+        
         public void StopTimer()
         {
             stopper = true;
