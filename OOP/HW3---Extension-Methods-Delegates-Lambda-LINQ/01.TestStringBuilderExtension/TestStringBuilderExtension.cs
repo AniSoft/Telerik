@@ -1,9 +1,9 @@
-using System;
-using System.Text;
-using _01.StringBuilderExtantion;
-
 namespace _01.TestStringBuilderExtension
 {
+    using System;
+    using System.Text;
+    using _01.StringBuilderExtantion;
+
     class TestStringBuilderExtension
     {
         static void Main()
@@ -14,8 +14,6 @@ namespace _01.TestStringBuilderExtension
             StringBuilder subsb = sb.Substring(4, 7);
             Console.WriteLine(subsb.ToString());
             Console.WriteLine(str.Substring(4, 7));
-
-
             Console.WriteLine(sb.Substring(5));
         }
     }
