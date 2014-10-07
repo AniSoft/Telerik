@@ -1,12 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Defining_Classes___Part_I;  // adding Defining_Classes___Part_I as a namespace to use it
-
 namespace GSMTest
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using Defining_Classes___Part_I;  // adding Defining_Classes___Part_I as a namespace to use it
+    
     public class GSMTest
     {
         static void Main(string[] args)
@@ -20,12 +20,12 @@ namespace GSMTest
                 new GSM("Galaxy S3III", "Samsung", 150, "Stoyan", new Battery(),new Display(7,512)),               
 
             };
+    
             foreach (var gsm in gsms)
             {
                 Console.WriteLine(gsm.ToString());
                 Console.WriteLine();
             }
-
 
             Console.WriteLine(GSM.IPhone4S);
         }
