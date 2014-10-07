@@ -1,12 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using _02.Bank;
-
 namespace _02.TestBank
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using _02.Bank;
+
     class TestBank
     {
         static void Main()
@@ -24,6 +24,7 @@ namespace _02.TestBank
                 new Person("Ирина Николова Гринкевич","ул.\"Ген. Гурко\" No 6", 9004158978),
                 new Company("БЪЛГЕРИАН ВИП ТУРС ООД","ул.\"Ген. Гурко\" No 46", 98752932),
             };
+            
             List<Account> accounts = new List<Account>()
             {
                 new DepositeAccount(customers[0],0.568,1500),
