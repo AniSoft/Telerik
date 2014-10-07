@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace _07.TimerUsingDelegate
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    
     // A delegate which processes the TimeElapsed event.
     public delegate void TimeElapsedEventHandler(object sender, TimeElapsedEventArgs e);
 
