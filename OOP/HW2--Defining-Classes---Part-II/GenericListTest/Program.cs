@@ -1,15 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GenericList;
-
 namespace GenericListTest
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using GenericList;
+
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             GenericList<int> list = new GenericList<int>();
             list.AddItem(5);
