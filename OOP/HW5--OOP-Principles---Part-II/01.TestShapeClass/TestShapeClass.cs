@@ -1,12 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using _01.ShapeClass;
-
 namespace _01.TestShapeClass
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using _01.ShapeClass;
+
     class TestShapeClass
     {
         static void Main()
@@ -17,6 +17,7 @@ namespace _01.TestShapeClass
                 new Triangle(5,5),
                 new Circle(5)
             };
+
             foreach (var item in shapes)
             {
                 Console.WriteLine("{0} has surface {1:F3}", item.GetType().Name, item.CalculateSurface());
