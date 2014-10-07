@@ -1,12 +1,12 @@
-using _03.Animals;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace _03.TestAnimals2
 {
+    using _03.Animals;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class TestAnimals
     {
         static void Main()
@@ -33,6 +33,7 @@ namespace _03.TestAnimals2
                 new Dog("Puffi",3,Sex.female),
                 new Tomcat("MatsMats",3)
             };
+
             var animalGroups =
                 (from animal in animals
                  group animal by animal.GetType().Name into groups
@@ -51,6 +52,7 @@ namespace _03.TestAnimals2
                 {
                     Console.WriteLine(item);
                 }
+
                 Console.WriteLine("Average age of {0} are {1}", group.groupName + "s", Math.Round(group.averageSum), 2);
                 Console.WriteLine();
             }
