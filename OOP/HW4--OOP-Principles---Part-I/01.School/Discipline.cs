@@ -1,21 +1,24 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace _01.School
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public class Discipline : ICommentable
     {
         private int lectureNumbers;
         private int exerciseNumbers;
 
         public string Comment { get; set; }
+
         public string Name { get; set; }
+
         public int LectureNumbers
         {
             get { return this.lectureNumbers; }
+
             set
             {
                 if (value < 1)
@@ -28,9 +31,11 @@ namespace _01.School
                 }
             }
         }
+
         public int ExerciseNumbers
         {
             get { return this.exerciseNumbers; }
+
             set
             {
                 if (value < 1)
@@ -43,8 +48,7 @@ namespace _01.School
                 }
             }
         }
-
-
+        
         // Constructor
         public Discipline(string name, int lectureNumbers, int exerciseNumbers)
         {
