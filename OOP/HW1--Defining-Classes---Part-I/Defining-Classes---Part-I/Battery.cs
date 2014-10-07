@@ -1,12 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Defining_Classes___Part_I
 {
-
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
 
     public enum BatteryType
     {
@@ -37,9 +35,11 @@ namespace Defining_Classes___Part_I
                 }
             }
         }
+        
         public double HoursIdle 
         {
             get { return this.hoursIdle; }
+            
             set
             {
                 if (value >= 0)
@@ -56,6 +56,7 @@ namespace Defining_Classes___Part_I
         public double HoursTalk
         {
             get { return this.hoursTalk; }
+            
             set
             {
                 if (value >= 0)
@@ -69,8 +70,6 @@ namespace Defining_Classes___Part_I
             }
         }
         
-        
-
         public BatteryType Type
         {
             get { return this.type; }
@@ -80,6 +79,7 @@ namespace Defining_Classes___Part_I
         public Battery()
         {
         }
+        
         public Battery(string model, int hoursIdle, int hoursTalk, BatteryType type)
         {
             this.Model = model;
